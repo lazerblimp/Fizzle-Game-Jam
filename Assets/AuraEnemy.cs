@@ -62,4 +62,13 @@ public class AuraEnemy : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if (other.CompareTag("PlayerShot"))
+        {
+            timeBtwShots = startTimeBtwShots;
+        }
+    }
+    
 }

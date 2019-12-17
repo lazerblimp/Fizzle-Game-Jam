@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector3(player.position.x, player.position.y, player.position.z);
@@ -33,7 +33,12 @@ public class Projectile : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
+            DestroyProjectile();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (other.CompareTag("PlayerShot"))
         {
             DestroyProjectile();
         }
@@ -45,7 +50,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-       
+
         Destroy(gameObject);
     }
 }

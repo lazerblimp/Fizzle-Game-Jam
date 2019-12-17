@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour {
 
     public GameObject bullet;
     public float speed = 100f;
+    public float disappear = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,13 @@ public class Shoot : MonoBehaviour {
             GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
             Rigidbody instBulletRigidBody = instBullet.GetComponent<Rigidbody>();
             instBulletRigidBody.AddForce(transform.forward * speed);
+        }
+
+        disappear -= Time.deltaTime;
+
+        if(disappear <= 0)
+        {
+            Destroy(gameObject);
         }
 	}
 }
