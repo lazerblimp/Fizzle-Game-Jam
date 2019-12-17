@@ -60,8 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AuraEnemy.cs" />
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\LevelAdvancer.cs" />
-    <Compile Include="Assets\TempStolenPlayerController.cs" />
+    <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\Projectile.cs" />
+    <Compile Include="Assets\Shoot.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/s199039/Documents/GitHub/Fizzle-Game-Jam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
