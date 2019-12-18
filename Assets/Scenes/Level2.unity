@@ -3140,7 +3140,7 @@ PrefabInstance:
     - target: {fileID: 6800118871494260331, guid: b59c2544602547a4eae8a4a2fb9500d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 6800118871494260331, guid: b59c2544602547a4eae8a4a2fb9500d4,
         type: 3}
@@ -3225,12 +3225,47 @@ PrefabInstance:
     - target: {fileID: 462412519038479612, guid: b59c2544602547a4eae8a4a2fb9500d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7591126136738684737, guid: b59c2544602547a4eae8a4a2fb9500d4,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062434084167194830, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062434084167194830, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062434084167194830, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062434084167194830, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 754681401726799582, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 754681401726799582, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 754681401726799582, guid: b59c2544602547a4eae8a4a2fb9500d4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59c2544602547a4eae8a4a2fb9500d4, type: 3}
