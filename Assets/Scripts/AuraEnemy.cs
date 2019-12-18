@@ -10,8 +10,12 @@ public class AuraEnemy : MonoBehaviour
     public float startTimeBtwShots;
     public GameObject lightning;
     public GameObject cloud;
+    public GameObject circle;
+    public GameObject underCircle;
     public Transform lightningSpawn;
     public Transform cloudSpawn;
+    public Transform circleSpawn;
+    public Transform underCircleSpawn;
     public DestroyLightningAnimation vanish;
     private Transform player;
 
@@ -24,6 +28,8 @@ public class AuraEnemy : MonoBehaviour
 
     private GameObject currentLightningEffect;
     private GameObject currentCloudEffect;
+    private GameObject currentCircleEffect;
+    private GameObject currentUnderCircleEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +60,8 @@ public class AuraEnemy : MonoBehaviour
                 {
                     currentLightningEffect = Instantiate(lightning, lightningSpawn.position, Quaternion.identity);
                     currentCloudEffect = Instantiate(cloud, cloudSpawn.position, Quaternion.identity);
+                    currentCircleEffect = Instantiate(circle, circleSpawn.position, Quaternion.identity);
+                    currentUnderCircleEffect = Instantiate(underCircle, underCircleSpawn.position, Quaternion.identity);
                 }
                 timeBtwShots -= Time.deltaTime;
 
@@ -64,6 +72,8 @@ public class AuraEnemy : MonoBehaviour
             timeBtwShots = startTimeBtwShots;
             Destroy(currentLightningEffect);
             Destroy(currentCloudEffect);
+            Destroy(currentCircleEffect);
+            Destroy(currentUnderCircleEffect);
             transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, Speed * Time.deltaTime);
             transform.LookAt(currentWaypoint.position);
             if (transform.position.x == currentWaypoint.position.x && transform.position.y == currentWaypoint.position.y && transform.position.z == currentWaypoint.position.z)
@@ -86,10 +96,13 @@ public class AuraEnemy : MonoBehaviour
     void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("PlayerShot"))
+
         {
             timeBtwShots = startTimeBtwShots;
             Destroy(currentLightningEffect);
             Destroy(currentCloudEffect);
+            Destroy(currentCircleEffect);
+            Destroy(currentUnderCircleEffect);
             Debug.Log("PleaseWork");
         }
     }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5148259899896904923}
   - component: {fileID: 1355961609874781974}
   m_Layer: 0
-  m_Name: YellowEnemyPrefab
+  m_Name: YellowEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +33,8 @@ Transform:
   - {fileID: 7824329552274152587}
   - {fileID: 3069483986294251310}
   - {fileID: 1519518060701393861}
+  - {fileID: 4317496443060899957}
+  - {fileID: 5077318273168232694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,8 +55,13 @@ MonoBehaviour:
   lightning: {fileID: 6726187130525249306, guid: b07e126c5dd019f43888117136482184,
     type: 3}
   cloud: {fileID: 7445824485016549231, guid: f56eccab1d1f61b488d661a20a8ee8a3, type: 3}
+  circle: {fileID: 2521964761237437599, guid: 6722f5bf3d3f2794ab8df6c7faf58d04, type: 3}
+  underCircle: {fileID: 429886411783834209, guid: abebdc1ab29a8bb4f9216d797205b5a0,
+    type: 3}
   lightningSpawn: {fileID: 3069483986294251310}
   cloudSpawn: {fileID: 1519518060701393861}
+  circleSpawn: {fileID: 4317496443060899957}
+  underCircleSpawn: {fileID: 5077318273168232694}
   vanish: {fileID: 8775758229398555568, guid: 75666b675bb76b84fb145e62fd534563, type: 3}
   Speed: 5
   currentWaypoint: {fileID: 0}
@@ -149,6 +156,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4794162721171547354}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5348858507471425914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4317496443060899957}
+  m_Layer: 0
+  m_Name: CircleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4317496443060899957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348858507471425914}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18, y: 0.3, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4794162721171547354}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9074477134532816216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5077318273168232694}
+  m_Layer: 0
+  m_Name: UnderCircleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5077318273168232694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074477134532816216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4794162721171547354}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7824329552274015775
 PrefabInstance:

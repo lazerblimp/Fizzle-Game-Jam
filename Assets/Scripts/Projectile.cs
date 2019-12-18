@@ -10,24 +10,24 @@ public class Projectile : MonoBehaviour
     private Transform player;
     private Vector3 target;
 
+    public Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector3(player.position.x, player.position.y, player.position.z);
+
+        transform.LookAt(player.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (transform.position.x == target.x && transform.position.y == target.y && transform.position.z == target.z)
-        {
-            DestroyProjectile();
-            Debug.Log("Missed");
-        }
+        rb.AddForce(transform.forward * speed);
     }
 
     void OnTriggerEnter(Collider other)
