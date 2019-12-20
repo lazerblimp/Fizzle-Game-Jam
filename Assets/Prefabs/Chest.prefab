@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 3412959659587852426}
   - component: {fileID: 3412959659584952490}
   - component: {fileID: 3412959659586083434}
+  - component: {fileID: 140641835705894673}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -393,6 +394,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &140641835705894673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412959659588273322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6296842, y: 1.8309255, z: 4.504075}
+  m_Center: {x: -0.0026204593, y: 0.91546273, z: 0}
 --- !u!1 &3412959659588273324
 GameObject:
   m_ObjectHideFlags: 0

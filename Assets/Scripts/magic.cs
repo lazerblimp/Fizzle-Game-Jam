@@ -24,11 +24,16 @@ public class magic : MonoBehaviour {
         }
 	}
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag != "Player")
+        if(other.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+        }
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Hit Wall");
         }
     }
 }

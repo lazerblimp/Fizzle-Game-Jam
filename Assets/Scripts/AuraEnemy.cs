@@ -5,7 +5,7 @@ using UnityEngine;
 public class AuraEnemy : MonoBehaviour
 {
     public float AuraDistance;
-
+    private AudioSource audioSource;
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject lightning;
@@ -34,7 +34,7 @@ public class AuraEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         timeBtwShots = startTimeBtwShots;
@@ -58,6 +58,7 @@ public class AuraEnemy : MonoBehaviour
             {
                 if(timeBtwShots == startTimeBtwShots)
                 {
+                    audioSource.Play();
                     currentLightningEffect = Instantiate(lightning, lightningSpawn.position, Quaternion.identity);
                     currentCloudEffect = Instantiate(cloud, cloudSpawn.position, Quaternion.identity);
                     currentCircleEffect = Instantiate(circle, circleSpawn.position, Quaternion.identity);
@@ -74,6 +75,7 @@ public class AuraEnemy : MonoBehaviour
             Destroy(currentCloudEffect);
             Destroy(currentCircleEffect);
             Destroy(currentUnderCircleEffect);
+            audioSource.Stop();
             transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, Speed * Time.deltaTime);
             transform.LookAt(currentWaypoint.position);
             if (transform.position.x == currentWaypoint.position.x && transform.position.y == currentWaypoint.position.y && transform.position.z == currentWaypoint.position.z)
@@ -103,6 +105,7 @@ public class AuraEnemy : MonoBehaviour
             Destroy(currentCloudEffect);
             Destroy(currentCircleEffect);
             Destroy(currentUnderCircleEffect);
+            audioSource.Stop();
             Debug.Log("PleaseWork");
         }
     }

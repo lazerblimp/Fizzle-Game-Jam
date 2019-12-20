@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
 
     public float speed;
-
+    private AudioSource audioSource;
     private Transform player;
     private Vector3 target;
 
@@ -15,6 +15,8 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         rb = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;

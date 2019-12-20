@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float firingDistance;
-
     private float timeBtwShots;
     public float startTimeBtwShots;
 

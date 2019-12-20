@@ -7,12 +7,19 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float rotationSpeed = 10.0f;
     public Camera playerCamera;
-    bool freeze = false;
+    public bool freeze;
     public float freezeTimer;
+    public float startFreezeTimer;
+    private AudioSource audioSource;
+    private GameObject currentIceEffect;
+    public Transform iceSpawn;
+    public GameObject ice;
 
     private void Start()
     {
-
+        freezeTimer = startFreezeTimer;
+        freeze = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -26,15 +33,23 @@ public class PlayerMovement : MonoBehaviour
             transform.forward = -new Vector3(offset.x, 0, offset.y);
         }
 
-        freezeTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (freeze == true)
         {
-            freeze = true;
-            freezeTimer = 5.0f;
+            if (freezeTimer == startFreezeTimer)
+            {
+                currentIceEffect = Instantiate(ice, iceSpawn.position, Quaternion.identity);
+            }
+            freezeTimer -= Time.deltaTime;
+            audioSource.Play();
         }
 
-        freeze = freezeTimer > 0;
+        if (freezeTimer <= 0)
+        {
+            freeze = false;
+            Destroy(currentIceEffect);
+            freezeTimer = startFreezeTimer;
+        }
 
         if (!freeze)
         {
