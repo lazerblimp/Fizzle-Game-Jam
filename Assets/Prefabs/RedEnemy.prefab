@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingDistance: 20
-  startTimeBtwShots: 2
+  startTimeBtwShots: 1.5
   projectile: {fileID: 7714233079629109627, guid: 2e5ce8faa4d5d904f93e0595602286f7,
     type: 3}
   Speed: 0
