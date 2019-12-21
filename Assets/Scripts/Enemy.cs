@@ -7,17 +7,20 @@ public class Enemy : MonoBehaviour
     public float firingDistance;
     private float timeBtwShots;
     public float startTimeBtwShots;
-
+    public GameObject circle;
+    public GameObject underCircle;
     public GameObject projectile;
     private Transform player;
-
+    public Transform circleSpawn;
+    public Transform underCircleSpawn;
     public float Speed;
 
     private Transform currentWaypoint;
     public GameObject pointOne;
     public GameObject pointTwo;
+    private GameObject currentCircleEffect;
+    private GameObject currentUnderCircleEffect;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -44,11 +47,18 @@ public class Enemy : MonoBehaviour
             }
             else
             {
+                if (timeBtwShots == startTimeBtwShots)
+                {
+                    currentCircleEffect = Instantiate(circle, circleSpawn.position, Quaternion.identity);
+                    currentUnderCircleEffect = Instantiate(underCircle, underCircleSpawn.position, Quaternion.identity);
+                }
                 timeBtwShots -= Time.deltaTime;
             }
         }
         else
         {
+            Destroy(currentCircleEffect);
+            Destroy(currentUnderCircleEffect);
             transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, Speed *Time.deltaTime);
 
             if(transform.position.x == currentWaypoint.position.x && transform.position.y == currentWaypoint.position.y && transform.position.z == currentWaypoint.position.z)
@@ -71,6 +81,8 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("PlayerShot"))
         {
             timeBtwShots = startTimeBtwShots;
+            Destroy(currentCircleEffect);
+            Destroy(currentUnderCircleEffect);
         }
     }
 }

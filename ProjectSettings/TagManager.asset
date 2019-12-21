@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - PlayerShot
   - Enemy
+  - IceSpawn
+  - CircleSpawn
   layers:
   - Default
   - TransparentFX
